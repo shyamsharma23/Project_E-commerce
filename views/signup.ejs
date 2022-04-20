@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/home.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+
+
+<body>
+    <div class="section">
+        <header class="nav-bar">
+            <h3 class="logo">travelMates</h3>
+            <ul class="list">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/login">Log in</a></li>
+                <li><a href="#">Features</a></li>
+
+            </ul>
+        </header>
+    </div>
+    <main>
+        <div class="main">
+            <div class="col-left">
+                <h1 class="heading">
+                    Want to have a car without owning it!
+                </h1>
+                <p>
+                    See how experienced developers solve problems in real-time. Watching scripted tutorials is great,
+                    but understanding how developers think is invaluable.
+                </p>
+            </div>
+
+            <div class="col-right">
+                <div class="form">
+                    <form action="/home" method="POST" class="container">
+
+                        <input placeholder="First Name" name="firstname" type="text">
+                        <input placeholder="Last Name" name="lastname" type="text">
+                        <input placeholder="E-mail Address" name="email" type="text">
+                        <input placeholder="Username" name="username" type="text">
+                        <input placeholder="Password" name="password" type="password">
+
+                        <select id="root" onchange="handleChange(this.options[this.selectedIndex].value)" class="category" name="status">
+                            <option value="DRIVER">Driver</option>
+                            <option value="RIDER">Rider</option>
+                        </select>
+                        <section class="element-hide" id="extra">
+                            <input type="text" placeholder="License no." name="license">
+                            <label for="exp" class="label">Date of Expiration of ID:</label>
+                            <input type="date" placeholder="Expiry date" name="exp" id="exp">
+                            <input type="text" placeholder="Phone Number" name="phone">
+                        </section>
+
+                        <button type="submit" class="btn">Sign up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+    <script>
+        const ele = document.getElementById("extra")
+
+        function handleChange(val) {
+            if (val.toLowerCase() === "rider") {
+                ele.style.display = "none"
+            } else if (val.toLowerCase() === "driver") {
+                ele.style = "display: flex"
+            }
+        }
+        // function showhide() {
+        //     console.log(ele)
+        //     if (document.getElementById('driver').checked) {
+        //         ele[0].classList.add("element-hide")
+        //     }
+        //     else {
+        //         ele[0].style.display = "none";
+        //     }
+        // }
+        // const ele = document.getElementById('root');
+        // // var selection = ele.option[ele.selectedIndex].value;
+        // console.log(ele);
+    </script>
+
+</body>
+
+</html>

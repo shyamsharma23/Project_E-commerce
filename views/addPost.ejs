@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+</head>
+<body>
+    <form action="/home/<%= id %>/posts" method="POST">
+        <input type="text" placeholder="Destination" name="destination">
+        <input type="text" placeholder="Pick-Up" name="pickup">
+        <input type="number" placeholder="Price" name="price">
+        <label for="date">Date of leaving: </label>
+        <input type="date" placeholder="Date" name="date" id="date">
+        <button>Add</button>
+    </form>
+    
+</body>
+</html>

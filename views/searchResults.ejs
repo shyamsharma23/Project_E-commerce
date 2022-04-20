@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/results.css" rel="stylesheet">
+    <title>Result</title>
+</head>
+<body>
+    <div class="section">
+        <header class="nav-bar">
+            <h3 class="logo">travelMates</h3>
+            <ul class="list">
+                <li><a href="/home/<%= id %>">Home</a></li>
+                <li><a href="/logout">Log out</a></li>
+                <li> <a href='/home/<%= id %>/showposts'>My Posts</a> </li>
+
+            </ul>
+        </header>
+    </div>
+
+    <% for (let item of filteredUsers){ %>
+        <div class="element">
+            <div class="wrapper">
+                <div>
+                    <p>
+                        Destination City: <%= item.destination %>
+                    </p>
+                    <p>
+                        Pickup City: <%= item.pickup %>
+                    </p>
+                    <p>
+                        Driver number: <%= item.user.phone %> 
+                    </p>
+                </div>
+                <p>
+                    Price: <%= item.price %> USD
+                </p>
+
+            </div>
+            <p>Date of leaving:<%= item.date %>
+            </p>
+        </div> 
+        <% } %> 
+</body>
+</html>

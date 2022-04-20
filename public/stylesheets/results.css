@@ -1,0 +1,52 @@
+body{
+    margin: 0;
+}
+
+.logo {
+    color: white;
+}
+
+/* Navigation bar */
+.list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    /* border: 2px solid red; */
+    width: 30%;
+
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+    margin: 0 auto;
+    /* border: 2px solid red; */
+    align-items: center;
+
+
+}
+
+.section {
+    /* background-color: rgba(50, 104, 134, 0.3); */
+    background-color: hsl(0, 100%, 74%);
+}
+
+.list a {
+    text-decoration: none;
+    color: white;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.element{
+    margin: 0 auto;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 1em;
+    padding: 1em;
+    border-radius: 10px;
+}

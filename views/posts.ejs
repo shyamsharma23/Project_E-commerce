@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/posts.css" rel="stylesheet">
+    <title>Post</title>
+</head>
+
+<body>
+    <div class="section">
+        <header class="nav-bar">
+            <h3 class="logo">travelMates</h3>
+            <ul class="list">
+                <li><a href="#">Home</a></li>
+                <li><a href="/logout">Log out</a></li>
+                <% if (user.status === "DRIVER"){ %> 
+                <li> <a href='/home/<%= user._id %>/showposts'>My Posts</a> </li>
+                <% } %> 
+
+            </ul>
+        </header>
+    </div>
+    <div class="search">
+        <form action="/home/search/<%= user._id %>" method="POST">
+            <input type="text" placeholder="enter your pick up city" name="pickup" required>
+            <input type="text" placeholder="enter your destination" name="destination" required>
+            <label for="date">Date of leaving: </label>
+            <input type="date" name="date" id="date" required>
+
+            <button class="btn-search">Search</button>
+        </form>
+    </div>
+
+    <% for(let item of items){ %>
+        <div class="element">
+            <div class="wrapper">
+                <div>
+                    <p>
+                        Destination City: <%= item.destination %>
+                    </p>
+                    <p>
+                        Pickup City: <%= item.pickup %>
+                    </p>
+                    <p>
+                        Driver number: <%= item.user.phone %> 
+                    </p>
+                </div>
+                <p>
+                    Price: <%= item.price %> USD
+                </p>
+
+            </div>
+            <p>Date of leaving:<%= item.date %>
+            </p>
+        </div>
+
+        <% } %>
+            <% if(user.status==='DRIVER' ) {%>
+                <div class="post-add">
+                    <a href='/home/<%= user._id %>/posts'>Add post</a>
+                </div>
+
+                <% } %>
+
+
+</body>
+
+</html>
